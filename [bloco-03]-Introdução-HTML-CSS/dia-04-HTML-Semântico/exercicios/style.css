@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+  }
+
+  .first {
+    background-color: rgb(235, 200, 84);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    color: black;
+    display: inline-block;
+    
+  }
+
+  .second {
+    background-color: rgb(219, 219, 219);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    color: black;
+    ;
+  }
+
+  .third {
+    background-color: rgb(170, 142, 106);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    color: black;
+    display: inline-block;
+  }
+  h3 {
+    text-align: center;
+  }
+  .links li {
+    display: inline;
+    color: black;
+    ;
+    
+  }
+  body {
+    background-color: white;
+  }
