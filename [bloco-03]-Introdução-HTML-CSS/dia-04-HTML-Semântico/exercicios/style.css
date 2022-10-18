@@ -9,8 +9,8 @@ h1 {
     text-align: center;
     width: 200px;
     color: black;
-    display: inline-block;
-    
+    display: block;
+    margin-left: 200px;
   }
 
   .second {
@@ -20,6 +20,7 @@ h1 {
     text-align: center;
     width: 300px;
     color: black;
+    display: inline-block;
     ;
   }
 
@@ -32,15 +33,13 @@ h1 {
     color: black;
     display: inline-block;
   }
+  li {
+    display: inline-block;
+  }
   h3 {
     text-align: center;
   }
-  .links li {
-    display: inline;
-    color: black;
-    ;
-    
-  }
+  
   body {
     background-color: white;
   }
