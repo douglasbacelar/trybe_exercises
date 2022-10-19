@@ -4,7 +4,7 @@ Contém todas as atividades desenvolvidas por [mim](www.linkedin.com/in/douglas-
 
 *"O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais."*
 
-## Fundamentos do Desenvolvimento Web
+## Fundamentos do Desenvolvimento Web  ⏳
 Bloco 1: Unix, Bash e Shell Script
 
  * 1.1 - Unix & Bash - Parte 1
@@ -71,7 +71,7 @@ Bloco 8: Higher Order Functions do JavaScript ES6
  * 8.5 - JavaScript ES6 - spread operator, parâmetro rest, destructuring e mais
  * 8.6 - Projeto - Zoo functions
 
-## Desenvolvimento Front-end
+## Desenvolvimento Front-end  ⏳
 
 Bloco 9: JavaScript e testes Assíncronos
 
@@ -133,7 +133,7 @@ Bloco 18: Projeto App de Receitas
 
  * 18.1 - Projeto - App de Receitas
 
-## Desenvolvimento Back-end
+## Desenvolvimento Back-end  ⏳
 
 Bloco 19: Utilizando Containers
  * 19.1 - Utilizando Containers - Docker
@@ -239,7 +239,7 @@ Bloco 32: App de Delivery
  * 33.1 - VPS
  * 33.2 - Dia 2
  
-## Ciência da Computação
+## Ciência da Computação  ⏳
 
 Bloco 34: Introdução à Python
 
