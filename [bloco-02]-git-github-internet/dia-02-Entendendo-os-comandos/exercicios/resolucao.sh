@@ -1,0 +1,1 @@
+A respectiva resolução pode ser verificada na estrutura do repositório 'trybe_exercises'.
