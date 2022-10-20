@@ -41,3 +41,81 @@ if (numero > 0) {
 
 // Parte 5
 
+const degreeAngleA = 65;
+const degreeAngleB = 100;
+const degreeAngleC = 15;
+
+let sumOfAngles = degreeAngleA + degreeAngleB + degreeAngleC;
+
+let allAnglesArePositives = degreeAngleA > 0 && degreeAngleB > 0 && degreeAngleC > 0;
+
+if(allAnglesArePositives){
+  if (sumOfAngles === 180) {
+    console.log(true);
+  } else {
+    console.log(false);
+  };
+} else {
+  console.log('Erro: ângulo inválido');
+}
+
+// Parte 6
+
+let chesspiece = 'bispo';
+
+switch(chesspiece) {
+  case 'rei': 
+    console.log('Rei -> Uma casa apenas para qualquer direção')
+    break;
+  case 'bispo': 
+    console.log('Bispo -> Diagonal');
+    break;
+  case 'rainha': 
+    console.log('Rainha -> Diagonal, horizontal e vertical');
+   break;
+  case 'cavalo':
+    console.log('Cavalo -> "L" pode pular sobre as peças.');
+    break;
+   case 'torre':
+    console.log('Torre -> Horizontal e vertical.');
+    break;
+  case 'peão':
+    console.log("Peão -> Apenas uma casa para frente, no primeiro movimento podem ser duas casas.");
+    break;
+  default:
+    console.log('Erro, peça inválida!');
+    break;
+}
+
+// Parte 7
+
+const nota = 65;
+
+if (nota >= 90) {
+  console.log('Sua nota é A');
+} else if (nota >= 80) {
+  console.log('Sua nota é B');
+} else if (nota >= 70) {
+  console.log('Sua nota é C');
+} else if (nota >= 60) {
+  console.log('Sua nota é D');
+} else if (nota >= 50) {
+  console.log('Sua nota é E');
+} else {
+  console.log('Sua nota é F');
+};
+
+// Parte 8
+
+const q = 40;
+const w = 53;
+const e = 21;
+
+let codigo =false;
+
+if ((q % 2 === 0 || w % 2 === 0 || e % 2 === 0)) {
+  codigo = true;
+};
+console.log(codigo);
+
+// Parte 9
