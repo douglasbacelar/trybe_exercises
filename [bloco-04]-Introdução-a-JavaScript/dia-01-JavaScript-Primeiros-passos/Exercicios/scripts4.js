@@ -107,7 +107,7 @@ if (nota >= 90) {
 
 // Parte 8
 
-const q = 40;
+const q = 41;
 const w = 53;
 const e = 21;
 
@@ -119,3 +119,16 @@ if ((q % 2 === 0 || w % 2 === 0 || e % 2 === 0)) {
 console.log(codigo);
 
 // Parte 9
+
+const r = 41;
+const t = 53;
+const y = 21;
+
+let code =false;
+
+if ((r % 2 === 0 || t % 2 === 0 || y % 2 === 0)) {
+  code = true;
+};
+console.log(code);
+
+// Parte 10
