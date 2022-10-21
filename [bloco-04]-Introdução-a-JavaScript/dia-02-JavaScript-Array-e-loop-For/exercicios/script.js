@@ -60,6 +60,51 @@ for (let index = 1; index < numbers.length; index +=1 ) {
 }
 console.log(maiorNumero);
 
+// Parte 3.5
+console.log('');
+
+let result = 0;
+
+for (let index = 0; index < numbers.length; index += 1) {
+  if (numbers[index] % 2 !== 0) {
+    result += 1;
+  }
+}
+
+if (result === 0) {
+  console.log('nenhum valor ímpar encontrado');
+} else {
+  console.log(result);
+}
+
+// Parte 3.6
+console.log('');
+
+let menorNumero = numbers[0];
+for (let index = 1; index < numbers.length; index +=1 ) {
+  if (numbers[index] < menorNumero) {
+    menorNumero = numbers[index];
+  }
+}
+console.log(menorNumero);
+
+// Parte 3.7
+console.log('');
+
+let numeral = [];
+
+for (let index = 1; index <= 25; index += 1) {
+  numeral.push(index);
+}
+
+console.log(numeral);
+
+// Parte 3.8
+console.log('');
+
+for (let index = 0; index < numeral.length; index += 1) {
+  console.log(numeral[index] / 2);
+};
 
 
 
