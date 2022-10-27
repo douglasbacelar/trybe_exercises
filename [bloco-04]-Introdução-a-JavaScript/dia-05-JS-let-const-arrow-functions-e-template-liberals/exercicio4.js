@@ -30,4 +30,3 @@ const circleArea = (raio) => {
   return console.log(`Essa é a área do círculo: ${area}`);
 }
 circleArea(3);
-console.log(`Essa é a área do círculo: ${circleArea}`);
