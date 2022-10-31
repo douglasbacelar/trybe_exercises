@@ -1,0 +1,36 @@
+<main id="paiDoPai">
+  <section id="pai">
+    <section id="primeiroFilho"></section>
+    <section id="elementoOndeVoceEsta">
+      <section id="primeiroFilhoDoFilho"></section>
+      <section id="segundoEUltimoFilhoDoFilho"></section>
+    </section>
+    Atenção!
+    <section id="terceiroFilho"></section>
+    <section id="quartoEUltimoFilho"></section>
+  </section>
+</main>
+<script>
+  // 1) desafio
+const pai = document.getElementById('pai');
+const irmaoElementoOndeVoceEsta = document.createElement('section');
+irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+pai.appendChild(irmaoElementoOndeVoceEsta);
+
+ // 2) desafio
+const ElementOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+const filhoElementoOndeVoceEsta = document.createElement('section');
+filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+ElementOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
+
+ // 3) desafio
+ const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+const filhoDoFilho = document.createElement('section');
+filhoDoFilho.id = 'filhoDoPrimeiroFilho';
+primeiroFilhoDoFilho.appendChild(filhoDoFilho);
+
+ // 4) desafio
+const terceiroFilho = filhoDoFilho.parentElement.parentElement.nextElementSibling;
+console.log(terceiroFilho);
+
+</script>
