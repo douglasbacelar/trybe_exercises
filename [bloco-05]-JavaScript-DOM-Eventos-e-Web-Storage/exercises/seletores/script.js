@@ -8,7 +8,7 @@ const sectionsEmergency = (selector, selector2) => {
   document.querySelectorAll(selector2).style.backgroundColor = '#ae81ff';
 };
 
-sectionsEmergency('.emergency-tasks', '.emergency-tasks div');
+sectionsEmergency('.emergency-tasks', '.emergency-tasks h3');
 
 const sectionsNoEmergency = (selector) => {
   document.querySelector(selector).style.backgroundColor = '#e6db74';
