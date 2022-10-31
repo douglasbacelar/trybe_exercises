@@ -77,7 +77,45 @@
       adicionaSection2.className = 'left-content';
       adicionaMain.appendChild(adicionaSection2);
 
-      
+      const adicionaSection3 = document.createElement('Section');
+      adicionaSection3.className = 'right-content';
+      adicionaMain.appendChild(adicionaSection3);
+
+      const imagem = document.createElement('img');
+      imagem.className = 'small-image';
+      imagem.src ='https://picsum.photos/200';
+      adicionaSection2.appendChild(imagem);
+
+      const listaNaoOrdenada = document.createElement('ul');
+      adicionaSection3.appendChild(listaNaoOrdenada);
+      const array = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+      for(let index = 0; index < array.length; index += 1) {
+        const lista = document.createElement('li');
+        lista.innerHTML = array[index];
+        listaNaoOrdenada.appendChild(lista);
+      };
+
+      for(let index = 1; index <= 3; index += 1) {
+      const adicionaH3 = document.createElement('h3');
+      adicionaH3.innerHTML = 'Criação' + index;
+      adicionaMain.appendChild(adicionaH3);
+    };
+
+    const adicionaTitle = document.querySelector('h1');
+    adicionaTitle.className = 'title';
+    
+    const adicionaDescription = document.getElementsByTagName('h3');
+    for (let index = 0; index < 3; index += 1) {
+      adicionaDescription[index].className = 'description';
+    };
+
+    const removaSection = document.getElementsByClassName('left-content')[0];
+    adicionaMain.removeChild(adicionaSection2);
+
+    const centralizaSection = document.getElementsByClassName('right-content')[0];
+
+
+
     </script>
   </body>
 </html>
