@@ -5,17 +5,23 @@ header();
 
 const sectionsEmergency = (selector, selector2) => {
   document.querySelector(selector).style.backgroundColor = '#ed8484';
-  document.querySelectorAll(selector2).style.backgroundColor = '#ae81ff';
+  const firstColor = document.querySelectorAll(selector2);
+  for(let index = 0; index < firstColor.length; index += 1) {
+    firstColor[index].style.backgroundColor = '#ae81ff';
+  }
 };
 
 sectionsEmergency('.emergency-tasks', '.emergency-tasks h3');
 
-const sectionsNoEmergency = (selector) => {
-  document.querySelector(selector).style.backgroundColor = '#e6db74';
-
+const sectionsNoEmergency = (selector1, selector2) => {
+  document.querySelector(selector1).style.backgroundColor = '#e6db74';
+  const secondColor = document.querySelectorAll(selector2);
+  for(let index = 0; index < secondColor.length; index += 1) {
+    secondColor[index].style.backgroundColor = 'black';
+  }
 };
 
-sectionsNoEmergency('.no-emergency-tasks');
+sectionsNoEmergency('.no-emergency-tasks', '.no-emergency-tasks h3');
 
 const footer = () => {
   let footer1 = document.querySelectorAll('footer')[0].style.backgroundColor = '#034422';
