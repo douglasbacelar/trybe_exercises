@@ -1,4 +1,4 @@
-* 1) Exercice 1
+* 1) Exercise 1
 
 🚀 Entendeu? Então vamos praticar! Adicione o código abaixo a uma página HTML e adicione uma tag script. Você deverá fazer tudo usando somente JavaScript.
 
@@ -26,7 +26,7 @@ Adicione o código abaixo a uma página HTML e adicione uma tag script. Você de
 * Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
 * Agora acesse o terceiroFilho a partir de pai.
 
-* 2) Exercice 2
+* 2) Exercise 2
 
 🚀E a prática? Aqui!
 
