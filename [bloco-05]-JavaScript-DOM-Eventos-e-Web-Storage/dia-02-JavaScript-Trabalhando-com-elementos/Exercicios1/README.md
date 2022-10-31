@@ -47,3 +47,22 @@ Adicione o código abaixo a uma página HTML e adicione uma tag script. Você de
 * Crie um filho para elementoOndeVoceEsta.
 * Crie um filho para primeiroFilhoDoFilho.
 * A partir desse filho criado, acesse terceiroFilho.
+
+* 3) Exercise 3
+
+Para praticar:
+
+<main id="paiDoPai">
+  <section id="pai">
+    <section id="primeiroFilho"></section>
+    <section id="elementoOndeVoceEsta">
+      <section id="primeiroFilhoDoFilho"></section>
+      <section id="segundoEUltimoFilhoDoFilho"></section>
+    </section>
+    Atenção!
+    <section id="terceiroFilho"></section>
+    <section id="quartoEUltimoFilho"></section>
+  </section>
+</main>
+
+* Remova todos os elementos filhos de paiDoPai exceto pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
