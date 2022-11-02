@@ -88,37 +88,63 @@ changeColor();
 // Sua função deve receber como parâmetro a string “Sexta-feira”;
 // Adicione a esse botão o ID "btn-friday";
 // Adicione esse botão como filho/filha da tag <div> com classe "buttons-container".
-
+const catchButton = document.querySelector('.buttons-container');
+const fridayButton = (event) => {
+  const addButtonFriday = document.createElement('button');
+  addButtonFriday.id = 'btn-friday';
+  addButtonFriday.innerHTML = event;
+  catchButton.appendChild(addButtonFriday);
+};
+fridayButton('Sexta-feira');
 
 // Parte 5
 // Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira;
 // Adicione ao botão “Sexta-feira” um evento de “click” e modifique o texto a ser exibido nos dias que são sextas-feiras.
 // De olho na dica 👀: É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial exibindo os dias.
+const catchButtonFriday = (array) => {
+let fridayDay = document.querySelectorAll('.friday');
+const catchButtonFriday = document.querySelector('#btn-friday');
+let newTextFriday = 'Sextou trybe';
+catchButtonFriday.addEventListener('click', () => {
+  for(index = 0; index < fridayDay.length; index += 1) {
+    if(fridayDay[index].innerHTML !== newTextFriday) {
+      fridayDay[index].innerHTML = newTextFriday
+    } else {
+      fridayDay[index].innerHTML = array[index];
+    }
+  }
+});
+}
+let decemberFridays = [ 4, 11, 18, 25 ];
+catchButtonFriday(decemberFridays);
 
 // Parte 6
 // Implemente duas funções que criem um efeito de “zoom”;
-
 // Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
-
 // De olho na dica 👀: Você pode utilizar a propriedade event.target.
+
 
 // Parte 7
 // Implemente uma função que adicione uma tarefa personalizada ao calendário;
 // A função deve receber como parâmetro a string com o nome da tarefa (ex: “cozinhar”) e criar dinamicamente um elemento com a tag <span> contendo a tarefa;
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+
 // Parte 8
 // Implemente uma função que adicione uma legenda com cor para a tarefa;
 // Essa função deverá receber como parâmetro uma string (‘cor’) e criar dinamicamente um elemento de tag <div> com a classe task;
 // O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada;
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+
 // Parte 9
 // Implemente uma função que selecione uma tarefa;
 // Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada;
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
+
 // Parte 10
 // Implemente uma função que atribua a cor da tarefa ao dia do calendário;
 // Adicione um evento que, ao clicar em um dia do mês no calendário, atribua a esse dia a cor da legenda da sua tarefa selecionada;
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+
 // Bônus
 // Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto “COMPROMISSOS”, adiciona o item à lista “MEUS COMPROMISSOS” ao clicar no botão “ADICIONAR”;
 // Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em “ADICIONAR”;
