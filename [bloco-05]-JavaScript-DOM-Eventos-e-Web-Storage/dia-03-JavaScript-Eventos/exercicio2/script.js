@@ -31,13 +31,13 @@ const criandoCalendario = () => {
     let dia = decemberDaysList[index];
     let diaItem = document.createElement('li');
     diaItem.innerHTML = dia;
-    if(dia == 24 || dia == 31) {
+    if(dia === 24 || dia === 31) {
       diaItem.setAttribute('class', 'day holiday');
       capturaDays.appendChild(diaItem);
-    } else if (dia == 4 || dia == 11 || dia == 18) {
+    } else if (dia === 4 || dia === 11 || dia === 18) {
       diaItem.setAttribute('class', 'day friday');
       capturaDays.appendChild(diaItem);
-    } else if (dia == 25) {
+    } else if (dia === 25) {
       diaItem.setAttribute('class', 'day holiday friday');
       capturaDays.appendChild(diaItem);
     } else {
@@ -67,15 +67,29 @@ createButton('Feriados');
 // Adicione ao botão "Feriados" um evento de "click" que altere a cor de fundo dos dias que possuem a classe "holiday".
 // De olho na dica 👀: É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial com a cor “rgb(238,238,238)”.
 const changeColor = () => {
-  
+  let holidayButton = document.querySelector('#btn-holiday');
+  let holidayDay = document.querySelectorAll('.holiday');
+  let backGroundColor = 'rgb(238,238,238)';
+  let newColor = 'white';
+  holidayButton.addEventListener('click', () => {
+    for (let index = 0; index < holidayDay.length; index += 1) {
+      if(holidayDay[index].style.backgroundColor === newColor) {
+        holidayDay[index].style.backgroundColor = backGroundColor;
+      } else {
+        holidayDay[index].style.backgroundColor = newColor
+      }
+    }
+  });
 }
-
+changeColor();
 
 // Parte 4
 // Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira";
 // Sua função deve receber como parâmetro a string “Sexta-feira”;
 // Adicione a esse botão o ID "btn-friday";
 // Adicione esse botão como filho/filha da tag <div> com classe "buttons-container".
+
+
 // Parte 5
 // Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira;
 // Adicione ao botão “Sexta-feira” um evento de “click” e modifique o texto a ser exibido nos dias que são sextas-feiras.
