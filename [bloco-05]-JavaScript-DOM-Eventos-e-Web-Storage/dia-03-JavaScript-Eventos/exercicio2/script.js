@@ -122,23 +122,56 @@ catchButtonFriday(decemberFridays);
 // Implemente duas funções que criem um efeito de “zoom”;
 // Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
 // De olho na dica 👀: Você pode utilizar a propriedade event.target.
-
+const dayMouseOver = () => {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseover', (event) => {
+  event.target.style.fontSize = '30px';
+  event.target.style.fontWeight = '600';
+  })
+}
+const dayMouseOut = () => {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseout', (event) => {
+  event.target.style.fontSize = '20px';
+  event.target.style.fontWeight = '200';
+  });
+}
+dayMouseOut();
+dayMouseOver();
 
 // Parte 7
 // Implemente uma função que adicione uma tarefa personalizada ao calendário;
 // A função deve receber como parâmetro a string com o nome da tarefa (ex: “cozinhar”) e criar dinamicamente um elemento com a tag <span> contendo a tarefa;
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+const addTask = (event) => {
+  const myTasks = document.querySelector('.my-tasks');
+  const addSpan = document.createElement('span');
+  addSpan.innerHTML = event;
+  myTasks.appendChild(addSpan);
+}
+addTask('Teste 1: Estudar todos os dias');
 
 // Parte 8
 // Implemente uma função que adicione uma legenda com cor para a tarefa;
 // Essa função deverá receber como parâmetro uma string (‘cor’) e criar dinamicamente um elemento de tag <div> com a classe task;
 // O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada;
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+const subtitlesTask = (color1) => {
+  const myTasks = document.querySelector('.my-tasks');
+  const addDiv = document.createElement('div');
+  addDiv.className = 'task';
+  addDiv.style.backgroundColor = color1;
+  myTasks.appendChild(addDiv);
+}
+subtitlesTask('green');
 
 // Parte 9
 // Implemente uma função que selecione uma tarefa;
 // Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada;
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
+const selectTask = () => {
+  const catchDiv = document.getElementsByTagName('div');
+}
 
 // Parte 10
 // Implemente uma função que atribua a cor da tarefa ao dia do calendário;
