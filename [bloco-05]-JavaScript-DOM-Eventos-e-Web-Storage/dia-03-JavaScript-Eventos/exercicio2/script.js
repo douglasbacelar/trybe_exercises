@@ -170,16 +170,71 @@ subtitlesTask('green');
 // Adicione um evento que ao clicar no elemento com a tag <div> referente à cor da sua tarefa, atribua a esse elemento a classe task selected, ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada;
 // Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task, ou seja, essa tarefa está deixando de ser uma tarefa selecionada.
 const selectTask = () => {
-  const catchDiv = document.getElementsByTagName('div');
-}
+  let catchTask = document.getElementsByClassName('task selected');
+  let myTask = document.querySelector('.task');
+  myTask.addEventListener('click', (event) => {
+    if (catchTask.length === 0) {
+      event.target.className = 'task selected';
+    } else { 
+    event.target.className = 'task';
+    }
+  });
+};
+selectTask();
 
 // Parte 10
 // Implemente uma função que atribua a cor da tarefa ao dia do calendário;
 // Adicione um evento que, ao clicar em um dia do mês no calendário, atribua a esse dia a cor da legenda da sua tarefa selecionada;
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+const setDayColor = () => {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
+  
+  days.addEventListener('click', (event) => {
+    let eventTargetColor = event.target.style.color;
+    if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor; 
+      event.target.style.color = color; 
+    } else if (eventTargetColor === taskColor) {
+      event.target.style.color = 'rgb(119,119,119)'; 
+    }
+  });
+}
+setDayColor();
 
 // Bônus
 // Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto “COMPROMISSOS”, adiciona o item à lista “MEUS COMPROMISSOS” ao clicar no botão “ADICIONAR”;
 // Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em “ADICIONAR”;
 // Ao pressionar a tecla “enter” o evento também deverá ser disparado.
 // De olho na dica 👀: Você pode utilizar a propriedade key.
+const addNewTask = () => {
+  let getInputField = document.querySelector('#task-input');
+  let addInputButton = document.querySelector('#btn-add');
+  let getTaskList = document.querySelector('.task-list');
+
+  addInputButton.addEventListener('click', () => {
+    if (getInputField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = getInputField.value;
+
+      getTaskList.appendChild(newLi);
+      getInputField.value = '';
+    } else {
+      alert('Error: Digite ao menos 1 caractere.');
+    }
+  });
+
+  getInputField.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' && getInputField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = getInputField.value;
+
+      getTaskList.appendChild(newLi);
+      getInputField.value = '';
+    }
+  });
+}
+
+addNewTask();
