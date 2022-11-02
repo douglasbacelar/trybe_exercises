@@ -32,21 +32,44 @@ const criandoCalendario = () => {
     let diaItem = document.createElement('li');
     diaItem.innerHTML = dia;
     if(dia == 24 || dia == 31) {
-      
+      diaItem.setAttribute('class', 'day holiday');
+      capturaDays.appendChild(diaItem);
+    } else if (dia == 4 || dia == 11 || dia == 18) {
+      diaItem.setAttribute('class', 'day friday');
+      capturaDays.appendChild(diaItem);
+    } else if (dia == 25) {
+      diaItem.setAttribute('class', 'day holiday friday');
+      capturaDays.appendChild(diaItem);
+    } else {
+      diaItem.setAttribute('class', 'day');
+      capturaDays.appendChild(diaItem);
     }
   }
 }
-
+criandoCalendario();
 
 // Parte 2
 // Implemente uma função que crie dinamicamente um botão com o nome “Feriados”;
 // Sua função deve receber um parâmetro com a string 'Feriados';
 // Adicione a este botão a ID "btn-holiday";
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
+const createButton = (event) => {
+  const catchButton = document.querySelector('.buttons-container');
+  const newButton = document.createElement('button');
+  newButton.id = 'btn-holiday';
+  newButton.innerHTML = event;
+  catchButton.appendChild(newButton);
+};
+createButton('Feriados');
+
 // Parte 3
 // Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday";
 // Adicione ao botão "Feriados" um evento de "click" que altere a cor de fundo dos dias que possuem a classe "holiday".
 // De olho na dica 👀: É interessante que esse botão possua também a lógica inversa. Ao ser clicado novamente, ele retorna à configuração inicial com a cor “rgb(238,238,238)”.
+const changeColor = () => {
+  
+}
+
 
 // Parte 4
 // Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira";
