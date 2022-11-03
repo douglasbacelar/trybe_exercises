@@ -11,25 +11,6 @@
 //   <p>Toy Story</p>
 // </div>
 
-const favoritaFilme = (event) => {
-  const defineFavorito = document.querySelector('.card-filme');
-  defineFavorito.classList.add('favoritado');
-  event.target.classList.add('favoritaço');
-  criaDiv.classList.toggle('favoritaço');
-}
-
-const pegaSection = document.getElementById('filmes');
-
-const filme = (nomeFilme) => {
-  criaDiv = document.createElement('div');
-  criaDiv.addEventListener('click', favoritaFilme);
-  criaDiv.classList.add('card-filme');
-  criaTexto = document.createElement('p');
-  criaTexto.innerHTML = nomeFilme;
-  criaDiv.appendChild(criaTexto);
-  pegaSection.appendChild(criaDiv);
-}
-
 // 2 - Adicione quatro cards na seção de filmes
 // Detalhamento do exercício
 // A section com id filmes deve receber os quatro cards de filmes:
@@ -53,15 +34,6 @@ const filme = (nomeFilme) => {
 //   </div>
 // </section>
 
-const array = ['Matrix', 'Matrix Reloaded', 'Matrix Revolution', 'Matrix Resurrections'];
-
-const filmeFavorito = (cards) => {
-    for (let index = 0; index < cards.length; index += 1) {
-    filme(cards[index]);
-  };
-}
-filmeFavorito(array);
-
 // 3 - Crie uma função que favorite um filme
 // Detalhamento do exercício
 // A função deve permitir favoritar um filme por vez, além de destacar o nome do filme favoritado:
@@ -71,7 +43,44 @@ filmeFavorito(array);
 
 // <p id="filme-selecionado">Iron Man</p>
 
+// 4 - Adicione o evento de clique em cada card
+// Detalhamento do exercício
 
+// Cada card deve possuir um evento de clique que dispara a função criada no exercício anterior:
+
+// Adicionar evento de clique para selecionar um card, o deixando favoritado;
+// Ao clicar em card diferentes, além da classe favoritado mudar entre os cards, o título em destaque no p de id filme-selecionado também deve mudar;
+
+const secaoDeFilmes = document.getElementById('filmes');
+
+const selecionaFilmeFavorito = (evento) => {
+  const filmeSelecionado = document.getElementsByClassName('favoritado')[0];
+
+  if (filmeSelecionado !== undefined) {
+    filmeSelecionado.classList.remove('favoritado');
+  }
+
+  evento.target.classList.add('favoritado');
+  document.getElementById('filme-selecionado').innerText = evento.target.innerText;
+}
+
+const geraCardDeFilme = (tituloDoFilme) => {
+  const card = document.createElement('div');
+  const titulo = document.createElement('p');
+
+  card.classList.add('card-filme');
+  titulo.innerText = tituloDoFilme;
+
+  card.appendChild(titulo);
+  card.addEventListener('click', selecionaFilmeFavorito);
+
+  return card;
+}
+
+secaoDeFilmes.appendChild(geraCardDeFilme('Harry Potter'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Star Wars'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Senhor dos Anéis'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Toy Story'));
 
 
 
