@@ -191,7 +191,7 @@ const setDayColor = () => {
   let days = document.querySelector('#days');
   let taskDiv = document.querySelector('.task');
   let taskColor = taskDiv.style.backgroundColor;
-  
+  console.log(taskColor);
   days.addEventListener('click', (event) => {
     let eventTargetColor = event.target.style.color;
     if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
