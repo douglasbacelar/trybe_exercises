@@ -77,10 +77,11 @@ const geraCardDeFilme = (tituloDoFilme) => {
   return card;
 }
 
-secaoDeFilmes.appendChild(geraCardDeFilme('Harry Potter'));
-secaoDeFilmes.appendChild(geraCardDeFilme('Star Wars'));
-secaoDeFilmes.appendChild(geraCardDeFilme('Senhor dos Anéis'));
 secaoDeFilmes.appendChild(geraCardDeFilme('Toy Story'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Matrix'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Matrix Reloaded'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Matrix Revolutions'));
+secaoDeFilmes.appendChild(geraCardDeFilme('Matrix Resurrecions'));
 
 
 
