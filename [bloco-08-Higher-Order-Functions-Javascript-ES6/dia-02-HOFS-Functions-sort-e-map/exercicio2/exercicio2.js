@@ -102,3 +102,5 @@ const nameAndAge = () => {
 )).sort((obj1, obj2) => obj1.age - obj2.age);
 }
 console.log(nameAndAge(books));
+
+const valorItens = [1, 32, 44, 2, 3];
