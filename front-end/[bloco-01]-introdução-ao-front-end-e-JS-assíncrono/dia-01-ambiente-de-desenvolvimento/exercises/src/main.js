@@ -4,7 +4,7 @@ const campoDeTexto = document.querySelector('#value');
 const botao = document.querySelector('#button');
 const seletor = document.querySelector('#option');
 const textoDeSaida = document.querySelector('#answer');
-const UUID_VERSION = 4;
+const UUID = 4;
 
 botao.addEventListener('click', (event) => {
     event.preventDefault();
@@ -12,7 +12,7 @@ botao.addEventListener('click', (event) => {
         cpf: validator.isTaxID(campoDeTexto.value, 'pt-BR'),
         hexColor: validator.isHexColor(campoDeTexto.value),
         email: validator.isEmail(campoDeTexto.value),
-        uuid: validator.isUUID(campoDeTexto.value, UUID_VERSION),
+        uuid: validator.isUUID(campoDeTexto.value, UUID),
         url: validator.isURL(campoDeTexto.value),
     };
     textoDeSaida.innerHTML = `A validação retornou ${campos[seletor.value]}`;
