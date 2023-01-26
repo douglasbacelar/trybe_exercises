@@ -1,4 +1,6 @@
 import React from 'react';
+import AnecdoteInput from './AnecdoteInput';
+import NameInput from './NameInput';
 import SelectInput from './SelectInput';
 
 class Form extends React.Component {
@@ -6,10 +8,28 @@ class Form extends React.Component {
     email: '',
     name: '',
     age: '',
-    textarea: '',
-    checkbox: false,
+    anecdote: '',
+    checkbox: '',
     file: '',
+    formComErros: true,
   }
+
+  handleError = () => {
+    const { email, name, age, anecdote, checkbox, file } =this.state;
+    const errorCases = [
+      !name.length,
+      !email.match(/^\S+@\S+$/i),
+      !age.length,
+      !anecdote.length,
+      !checkbox,
+      !file,
+    ];
+    const formCompleted = errorCases.every((error) => error !== true);
+
+    this.setState({
+      formComErros: !formCompleted,
+    })
+  ;}
 
   handleChange = ({ target }) => {
     const { name } = target;
@@ -17,11 +37,11 @@ class Form extends React.Component {
 
     this.setState({
       [name]: value,
-    });
+    },this.handleError);
   }
 
   render() {
-    const { email, name, age, textarea, checkbox, file } =this.state;
+    const { email, name, age, anecdote, formComErros, checkbox, file } =this.state;
     return (
       <div>
         <form className='form'>
@@ -31,16 +51,10 @@ class Form extends React.Component {
             handleChange={ this.handleChange }
             />
 
-          <label htmlFor='name'>
-            Nome:
-            <input
-              id='name'
-              name='name'
-              type='text'
-              onChange={ this.handleChange }
-              value={ name }
-            />      
-          </label>
+            <NameInput 
+              name = { name }
+              handleChange= { this.handleChange }
+            />
 
           <label htmlFor='email'>
             Email:
@@ -54,22 +68,17 @@ class Form extends React.Component {
           </label>
           </fieldset>
           <fieldset>
-          <label htmlFor='textarea'>
-            Anedota:
-            <textarea 
-              id='textarea'
-              name='textarea'
-              onChange={ this.handleChange }
-              value={ textarea }
+            <AnecdoteInput 
+              anecdote={ anecdote }
+              handleChange={ this.handleChange }
             />
-          </label>   
 
           <label htmlFor='checkbox'>
             <input
               id='checkbox'
               name='checkbox'
               type='checkbox'
-              checked={ this.handleChange }
+              onChange={ this.handleChange }
               value={ checkbox }
             />
           </label>
@@ -85,7 +94,8 @@ class Form extends React.Component {
           </label>
           </fieldset>
         </form>
-
+        { formComErros  ? <span style={{ color: 'red' } }>Preencha todos os campos</span>
+          : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
       </div>
     )
   }
