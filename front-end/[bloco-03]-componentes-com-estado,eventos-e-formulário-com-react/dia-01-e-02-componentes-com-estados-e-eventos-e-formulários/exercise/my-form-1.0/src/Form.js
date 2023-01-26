@@ -1,34 +1,35 @@
 import React from 'react';
+import SelectInput from './SelectInput';
 
 class Form extends React.Component {
   state = {
     email: '',
+    name: '',
+    age: '',
+    textarea: '',
+    checkbox: false,
+    file: '',
   }
 
   handleChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-      email: target.value,
+      [name]: value,
     });
   }
 
   render() {
-    const { email } =this.state;
-
+    const { email, name, age, textarea, checkbox, file } =this.state;
     return (
       <div>
         <form className='form'>
-
-          <label htmlFor='age'>
-            <select
-              id='age'
-              name='age'
-              defaultValue=''
-            >
-              <option value=''>Selecione</option>
-              <option value='adult'>Maior que 18</option>
-              <option value='underage'>Menor que 18</option>
-            </select>
-          </label>
+          <fieldset>
+            <SelectInput 
+            age= { age }
+            handleChange={ this.handleChange }
+            />
 
           <label htmlFor='name'>
             Nome:
@@ -36,6 +37,8 @@ class Form extends React.Component {
               id='name'
               name='name'
               type='text'
+              onChange={ this.handleChange }
+              value={ name }
             />      
           </label>
 
@@ -49,15 +52,38 @@ class Form extends React.Component {
               value={ email }
             />
           </label>
-
+          </fieldset>
+          <fieldset>
           <label htmlFor='textarea'>
             Anedota:
             <textarea 
               id='textarea'
               name='textarea'
+              onChange={ this.handleChange }
+              value={ textarea }
             />
-          </label>      
+          </label>   
 
+          <label htmlFor='checkbox'>
+            <input
+              id='checkbox'
+              name='checkbox'
+              type='checkbox'
+              checked={ this.handleChange }
+              value={ checkbox }
+            />
+          </label>
+
+          <label htmlFor='file'>
+            <input
+              id='file'
+              name='file'
+              type='file'
+              onChange={ this.handleChange }
+              value={ file }
+            />
+          </label>
+          </fieldset>
         </form>
 
       </div>
