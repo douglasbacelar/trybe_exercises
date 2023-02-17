@@ -1,0 +1,10 @@
+.imagem1 {
+    height: 300px;
+    width: 300px;
+}
+.nome {
+    font-style: italic;
+}
+.velocidade {
+    font-weight: bold;
+}
