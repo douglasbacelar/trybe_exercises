@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 30px;
+  text-align: center;
+}
+
+#filmes {
+  margin: 0 auto;
+  width: 520px;
+}
+
+#filmes div {
+  display: inline-block;
+  margin: 5px;
+}
+
+.card-filme {
+  border: 2px solid black;
+  font-size: 25px;
+  text-align: center;
+  width: 250px;
+}
+
+#filme-favorito {
+  margin: 20px;
+  text-align: center;
+}
+
+.favoritado {
+  background-color: orange;
+  color: purple;
+}
+
+#filme-selecionado {
+  border: 1px blueviolet dotted;
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 10px;
+  text-decoration: underline;
+  width: fit-content;
+}
