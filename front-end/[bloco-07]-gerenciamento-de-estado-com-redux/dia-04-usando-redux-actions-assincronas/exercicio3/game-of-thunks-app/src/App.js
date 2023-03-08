@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchAPI } from './redux/actions';
-import characterCard from './components/CharacterCard';
+import CharacterCard from './components/CharacterCard';
 
 class App extends React.Component {
   state = { 
@@ -26,7 +26,7 @@ class App extends React.Component {
         >
           Search
         </button>
-      <characterCard />
+      <CharacterCard />
 
     </div>
   );
