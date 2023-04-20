@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Formulário</h1>
+  <form action="" method="get" enctype="multipart/form-data">
+    <fieldset>
+    <label for="input-Nome">Nome:
+      <input type="text" id="input-Nome" name="nome" minlength="10" maxlength="40" required>
+    </label>
+    <br><br>
+    <label for="input-Email">Email:
+      <input type="email" id="input-Email" name="email" minlength="10" maxlength="50" required>
+    </label>
+    <p>Destino preferido:</p>
+      <label for="input-Destinos-1">Cidade</label>
+        <input type="radio" id="input-Destinos-1" name="destino" value="cidade" required> 
+      <label for="input-Destinos-2">Campo</label>
+        <input type="radio" id="input-Destinos-2" name="destino" value="campo" required> 
+      <label for="input-Destinos-3">Praia</label>
+        <input type="radio" id="input-Destinos-3" name="destino" value="praia" required> 
+      <label for="input-Destinos-4">Montanhas</label>
+        <input type="radio" id="input-Destinos-4" name="destino" value="montanhas" required> 
+      <br><br>
+      <label for="text-me"> Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+      <br>
+      <textarea name="sobre-mim" id="text-me" maxlength="500" rows="10" cols="60"></textarea>
+    <br>
+      <label for="input-data">Qual a melhor data para realizar sua viagem?</label>
+        <input type="date" id="input-data" name="data" value="data">
+        <br><br>
+      <label for="input-check-1"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+      <br><br>
+        <input type="radio" id="input-check-1" name="check1" value="check"> Concordo
+        <br><br>
+      <label for="input-check-2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+      <br><br>
+        <input type="radio" id="input-check-2" name="check2" value="check" required> Concordo
+    </fieldset>
+    <br><br>
+      <label for="input-envia">
+        <button type="submit" id="input-envia" disabled>Enviar</button>
+      </label>
+      <label for="input-apaga">
+        <button type="submit" id="input-apaga">Apagar</button>
+      </label>
+    </form>
+  
+    <script src="script.js"></script>
+</body>
+</html>
